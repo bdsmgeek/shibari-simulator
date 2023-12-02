@@ -1,21 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://BaseMashFemale.tscn" type="PackedScene" id=1]
-[ext_resource path="res://knot_demo.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://scripts/camera_control.gd" type="Script" id=3]
-
-[sub_resource type="SpatialMaterial" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 
 [node name="Spatial" type="Spatial"]
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.939758, 0.34184, 0, -0.34184, 0.939758, 0, 1.60571, 1.51173 )
-fov = 65.974
-script = ExtResource( 3 )
-
-[node name="knot_demo" type="MeshInstance" parent="."]
-transform = Transform( -0.153981, 0, 0, 0, -0.0951093, 0.186556, 0, -0.347685, -0.0510326, -0.842857, 1.48024, -0.201649 )
-mesh = ExtResource( 2 )
-material/0 = SubResource( 1 )
-
 [node name="BaseMashFemale" parent="." instance=ExtResource( 1 )]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5 )
